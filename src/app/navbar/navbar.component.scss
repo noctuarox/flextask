@@ -3,21 +3,19 @@
 
 $navbar-margin: 25px;
 $navbar-content-spaces: 20px;
+$navbar-input-width: 270px;
 
 .navbar-container {
   display: flex;
   flex-direction: column;
   width: $page-width;
-  height: 130px;
-
-  .navbar-primary-row, .navbar-secondary-row {
-    display: flex;
-    flex-direction: row;
-  }
+  height: 70px;
 
   .navbar-primary-row {
     height: 70px;
     border-bottom: $border-color;
+    display: flex;
+    flex-direction: row;
 
     .navbar-primary-left, .navbar-primary-right {
       align-items: center;
@@ -61,19 +59,13 @@ $navbar-content-spaces: 20px;
       justify-content: flex-end;
       margin-right: $navbar-margin;
 
-      .navbar-search {
-        position: relative;
-        .navbar-search-input {
-          @include app-plain-input;
-        }
-      }
-
-      .search-icon {
-        position: absolute;
-        top: 8px;
-        right: 5px;
-        color: $dark-icon-color;
-        cursor: pointer;
+      .navbar-search-input {
+        @include app-plain-input;
+        width: $navbar-input-width;
+        font-size: $primary-font-size;
+        font-weight: 900;
+        color: $bold-text-color;
+        background: no-repeat url('../../assets/search.svg') calc(#{$navbar-input-width} - 30px) 8px;
       }
 
       .navbar-profile {
@@ -84,6 +76,7 @@ $navbar-content-spaces: 20px;
           display: flex;
           flex-direction: column;
           justify-content: center;
+          cursor: pointer;
 
           .notification-icon-language {
             font-size: 16px;
@@ -101,6 +94,7 @@ $navbar-content-spaces: 20px;
           display: flex;
           align-items: center;
           margin-left: $navbar-content-spaces;
+          cursor: pointer;
 
           .profile-picture-img {
             height: 35px;
@@ -112,31 +106,6 @@ $navbar-content-spaces: 20px;
           }
         }
       }
-    }
-  }
-
-  .navbar-secondary-row {
-    height: 60px;
-    border-bottom: $border-color;
-
-    .navbar-secondary-right, .navbar-secondary-left {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      font-size: $primary-font-size;
-      color: $light-text-color;
-    }
-
-    .navbar-secondary-right {
-      margin-right: $navbar-margin;
-      justify-content: flex-end;
-      width: 100%;
-    }
-
-    .navbar-secondary-left {
-      margin-left: $navbar-margin;
-      justify-content: flex-start;
-      flex-shrink: 0;
     }
   }
 

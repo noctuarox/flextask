@@ -1,6 +1,72 @@
 @import '../../_variables.scss';
 @import '../../_theme.scss';
 
+$sidebar-filter-input-width: 100%;
+$arrow-down-icon-size: 15px;
+$search-icon-size: 18px;
+$searchbar-margin: 25px;
+$searchbar-content-spaces: 20px;
+
+.ambassadors-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 70px);
+  overflow: auto;
+}
+
+.ambassadors-searchbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 60px;
+  flex-shrink: 0;
+
+  .ambassadors-searchbar-content {
+    display: flex;
+    height: 60px;
+    border-bottom: $border-color;
+  }
+
+  .searchbar-right, .searchbar-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: $primary-font-size;
+    color: $light-text-color;
+  }
+
+  .searchbar-right {
+    margin-right: $searchbar-margin;
+    justify-content: flex-end;
+    width: 100%;
+  }
+
+  .searchbar-left {
+    margin-left: $searchbar-margin;
+    justify-content: flex-start;
+    flex-shrink: 0;
+  }
+
+  .searchbar-divider {
+    border-left: $border-color;
+    padding-left: $searchbar-content-spaces;
+    margin-left: $searchbar-content-spaces;
+    height: 20px;
+  }
+
+  .searchbar-dropdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+
+    .searchbar-dropdown-icon {
+      font-size: $primary-font-size;
+      margin-left: 4px;
+    }
+  }
+}
+
 .ambassadors-container {
   display: flex;
   flex-direction: row;
@@ -9,10 +75,12 @@
   .sidebar-container, .card-container {
     display: flex;
     flex-direction: column;
+    height: 100%;
   }
 
   .sidebar-container {
-    width: 330px;
+    flex-basis: 330px;
+    flex-shrink: 0;
     border: $border-color;
 
     .sidebar-title, .sidebar-header {
@@ -64,57 +132,44 @@
       @include app-plain-input;
       font-size: $primary-font-size;
       font-weight: 900;
-      color: $bold-text-color;
       margin-bottom: 20px;
+      width: $sidebar-filter-input-width;
     }
 
-    .select-container {
-      display: flex;
-      position: relative;
+    .sidebar-input-arrow-down {
+      background: no-repeat url('../../assets/arrow_down.svg') calc(#{$sidebar-filter-input-width} - 12px) center;
+      background-size: $arrow-down-icon-size $arrow-down-icon-size;
+      color: $bold-text-color;
+    }
 
-      .select-icon {
-        position: absolute;
-        right: 8px;
-        top: 12px;
-        cursor: pointer;
-      }
-
-      .select-icon-arrow {
-        font-size: 16px;
-      }
-
-      .arrow-down-icon {
-        color: $bold-text-color;
-      }
-
-      .search-icon {
-        color: $light-text-color;
-      }
+    .sidebar-input-search {
+      background: no-repeat url('../../assets/search.svg') calc(#{$sidebar-filter-input-width} - 12px) center;
+      background-size: $search-icon-size $search-icon-size;
+      color: $light-text-color;
     }
 
     .sidebar-tags {
       display: flex;
       flex-direction: row;
       align-items: center;
+      flex-wrap: wrap;
 
       .rectangular-tag {
         display: flex;
-        margin-right: 5px;
+        margin: 0 5px 5px 0;
         align-items: center;
-
-        .tag-text {
-          margin-left: 8px;
-        }
+        padding-right: 2px;
 
         .rectangle-clear-icon {
           color: #ffffff;
           font-size: 10px;
           margin-left: 3px;
+          visibility: hidden;
         }
 
-        &:not(:hover) {
+        &:hover {
           .rectangle-clear-icon {
-            visibility: hidden;
+            visibility: visible;
           }
         }
       }
@@ -197,6 +252,7 @@
 
         .proceed-icon {
           font-size: 10px;
+          cursor: pointer;
         }
       }
     }
