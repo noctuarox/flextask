@@ -38,7 +38,7 @@
     "component-selector": [
       true,
       "element",
-      "fu",
+      "app",
       "kebab-case"
     ],
     "curly": true,
@@ -46,7 +46,7 @@
     "directive-selector": [
       true,
       "attribute",
-      "fu",
+      "app",
       "camelCase"
     ],
     "eofline": true,

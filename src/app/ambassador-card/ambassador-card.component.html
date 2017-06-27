@@ -1,0 +1,35 @@
+<div class="ambassador-container">
+  <div class="ambassador-image">
+    <span *ngIf="isAmbassadorAvailable" class="app-rectangle">AVAILABLE</span>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXxRq1oQENoAdCY_dOktCrMA_v8PryIXcVAdBY65ET2VXM73G4" class="ambassador-img">
+  </div>
+  <div class="ambassador-content">
+    <div class="ambassador-bio">
+      <div class="ambassador-name">
+        {{ambassadorName}}
+      </div>
+      <div class="ambassador-detail">
+        Age: {{ambassadorAge}} | Location: {{ambassadorLocation}}
+      </div>
+    </div>
+    <div class="ambassador-info">
+      <div class="ambassador-info-row">
+        <div class="ambassador-cost">
+          <span class="price-amount">{{ambassadorPrice}} {{ambassadorCurrency}}</span>
+          <span class="price-info">Price per post</span>
+        </div>
+        <div class="ambassador-social">
+          <span class="ambassador-social-icon">
+          <i class="material-icons ambassador-icon-circle">account_circle</i>
+            </span>
+          <span class="ambassador-social-icon">
+          <i class="material-icons ambassador-icon-circle">account_circle</i>
+            </span>
+          <span class="ambassador-social-icon">
+         <i class="material-icons ambassador-icon-circle">account_circle</i>
+            </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

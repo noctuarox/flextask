@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 html, body {
   height: 100%;
 }
@@ -11,9 +13,24 @@ body {
   padding: 0;
   outline: none;
   box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
 }
 
-input {  /* stylelint-disable-line selector-no-type */
-  border: none;
-  background: none;
+.app-circle {
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  padding: 3px;
+  background: $primary-orange;
+  border-radius: 50px;
+  color: #ffffff;
+  text-align: center;
+}
+
+.app-rectangle {
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-size: 12px;
+  background: $primary-blue;
+  color: #ffffff;
 }

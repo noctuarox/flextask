@@ -1,0 +1,212 @@
+@import '../../_variables.scss';
+@import '../../_theme.scss';
+
+.ambassadors-container {
+  display: flex;
+  flex-direction: row;
+  width: $page-width;
+
+  .sidebar-container, .card-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .sidebar-container {
+    width: 330px;
+    border: $border-color;
+
+    .sidebar-title, .sidebar-header {
+      font-size: $secondary-font-size;
+      color: $light-text-color;
+      font-weight: 900;
+    }
+
+    .sidebar-filter, .sidebar-shortlist {
+      border-bottom: $border-color;
+      padding: 0 30px;
+
+      .sidebar-button {
+        width: 100%;
+        height: 40px;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        background-color: $ambassador-button-color;
+        font-weight: 900;
+        cursor: pointer;
+        margin: 20px 0 40px 0;
+      }
+
+      .app-rectangle {
+        background-color: $light-tag-color;
+
+        &:hover {
+          background-color: $dark-tag-color;
+        }
+      }
+    }
+
+    .sidebar-title {
+      padding: 28px 0;
+    }
+
+    .sidebar-header {
+      padding-bottom: 12px;
+    }
+  }
+
+  .sidebar-filter {
+    .interest-seeking {
+      color: $light-text-color;
+    }
+
+    .sidebar-filter-input {
+      @include app-plain-input;
+      font-size: $primary-font-size;
+      font-weight: 900;
+      color: $bold-text-color;
+      margin-bottom: 20px;
+    }
+
+    .select-container {
+      display: flex;
+      position: relative;
+
+      .select-icon {
+        position: absolute;
+        right: 8px;
+        top: 12px;
+        cursor: pointer;
+      }
+
+      .select-icon-arrow {
+        font-size: 16px;
+      }
+
+      .arrow-down-icon {
+        color: $bold-text-color;
+      }
+
+      .search-icon {
+        color: $light-text-color;
+      }
+    }
+
+    .sidebar-tags {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .rectangular-tag {
+        display: flex;
+        margin-right: 5px;
+        align-items: center;
+
+        .tag-text {
+          margin-left: 8px;
+        }
+
+        .rectangle-clear-icon {
+          color: #ffffff;
+          font-size: 10px;
+          margin-left: 3px;
+        }
+
+        &:not(:hover) {
+          .rectangle-clear-icon {
+            visibility: hidden;
+          }
+        }
+      }
+    }
+  }
+
+  .sidebar-shortlist {
+    display: flex;
+    flex-direction: column;
+
+    .sidebar-shortlist-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      padding-bottom: 15px;
+
+      .shortlist-item-image {
+        width: 36px;
+        height: 36px;
+        border-radius: 2px;
+      }
+
+      .shortlist-item-text {
+        margin-left: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .item-name {
+          font-size: $primary-font-size;
+          color: $bold-text-color;
+        }
+
+        .item-price {
+          font-size: $secondary-font-size;
+          color: $light-text-color;
+        }
+      }
+    }
+
+    .shortlist-divider {
+      border-bottom: $border-color;
+      padding-top: 15px;
+      margin-bottom: 15px;
+      width: 100%;
+    }
+
+    .price-footer {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      font-size: $secondary-font-size;
+      font-weight: 900;
+      align-items: center;
+      margin-bottom: 25px;
+
+      .total-price {
+        flex-shrink: 0;
+
+        .price-text {
+          color: $light-text-color;
+        }
+
+        .price-number {
+          margin-left: 2px;
+          color: $bold-text-color;
+        }
+      }
+
+      .price-proceed {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+
+        .proceed-text {
+          color: $bold-text-color;
+        }
+
+        .proceed-icon {
+          font-size: 10px;
+        }
+      }
+    }
+  }
+
+  .card-container {
+    padding: 20px;
+    background-color: $primary-gray;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}

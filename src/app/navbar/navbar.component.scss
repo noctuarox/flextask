@@ -1,0 +1,161 @@
+@import '../../_variables.scss';
+@import '../../_theme.scss';
+
+$navbar-margin: 25px;
+$navbar-content-spaces: 20px;
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  width: $page-width;
+  height: 130px;
+
+  .navbar-primary-row, .navbar-secondary-row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar-primary-row {
+    height: 70px;
+    border-bottom: $border-color;
+
+    .navbar-primary-left, .navbar-primary-right {
+      align-items: center;
+    }
+
+    .navbar-primary-left {
+      display: flex;
+      flex-direction: row;
+      flex-shrink: 0;
+      justify-content: flex-start;
+      margin-left: $navbar-margin;
+
+      .navbar-logo {
+        .navbar-logo-img {
+          height: 40px;
+        }
+      }
+
+      .navbar-item {
+        height: 100%;
+        margin: 0 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-bottom: 2px transparent solid;
+        color: $light-text-color;
+        font-size: $primary-font-size;
+      }
+
+      .navbar-item:hover {
+        border-bottom: 2px $primary-blue solid;
+        color: $bold-text-color;
+        cursor: pointer;
+      }
+    }
+
+    .navbar-primary-right {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: flex-end;
+      margin-right: $navbar-margin;
+
+      .navbar-search {
+        position: relative;
+        .navbar-search-input {
+          @include app-plain-input;
+        }
+      }
+
+      .search-icon {
+        position: absolute;
+        top: 8px;
+        right: 5px;
+        color: $dark-icon-color;
+        cursor: pointer;
+      }
+
+      .navbar-profile {
+        display: flex;
+        flex-direction: row;
+
+        .notification-icon {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          .notification-icon-language {
+            font-size: 16px;
+            position: absolute;
+          }
+
+          .app-circle {
+            position: relative;
+            bottom: 8px;
+            left: 5px;
+          }
+        }
+
+        .profile-picture {
+          display: flex;
+          align-items: center;
+          margin-left: $navbar-content-spaces;
+
+          .profile-picture-img {
+            height: 35px;
+            border-radius: 50px;
+          }
+
+          .profile-picture-icon {
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  .navbar-secondary-row {
+    height: 60px;
+    border-bottom: $border-color;
+
+    .navbar-secondary-right, .navbar-secondary-left {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: $primary-font-size;
+      color: $light-text-color;
+    }
+
+    .navbar-secondary-right {
+      margin-right: $navbar-margin;
+      justify-content: flex-end;
+      width: 100%;
+    }
+
+    .navbar-secondary-left {
+      margin-left: $navbar-margin;
+      justify-content: flex-start;
+      flex-shrink: 0;
+    }
+  }
+
+  .navbar-divider {
+    border-left: $border-color;
+    padding-left: $navbar-content-spaces;
+    margin-left: $navbar-content-spaces;
+    height: 20px;
+  }
+
+  .dropdown {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    .dropdown-icon {
+      font-size: $primary-font-size;
+      margin-left: 4px;
+    }
+  }
+}
+
