@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { AmbassadorModel } from '../models/ambassador.model';
 import * as moment from 'moment';
 
@@ -9,8 +9,9 @@ import * as moment from 'moment';
 })
 export class AmbassadorCardComponent implements OnInit {
 
+  @Input() ambassador: AmbassadorModel[];
+
   isAmbassadorAvailable = true;
-  ambassadorName = 'Franklin Eliott';
   ambassadorAge = 28;
   ambassadorLocation = 'USA';
   ambassadorPrice = 250;
@@ -18,6 +19,7 @@ export class AmbassadorCardComponent implements OnInit {
 
   ambassadorModel: AmbassadorModel[] = [
     {
+      id: '1',
       name: 'Franklin Elliott',
       birthDate: moment('101090', 'ddmmyy'),
       location: 'USA',
@@ -32,10 +34,12 @@ export class AmbassadorCardComponent implements OnInit {
   ];
 
   constructor() {
+
   }
 
   ngOnInit() {
-    //age: moment().diff(moment(), 'years'),
+    //console.log(moment('19901010', 'YYYYMMDD').diff(moment(), 'years'));
+    console.info(this.ambassador, 'ambassadors');
   }
 
 }

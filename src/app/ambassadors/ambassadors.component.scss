@@ -7,13 +7,6 @@ $search-icon-size: 18px;
 $searchbar-margin: 25px;
 $searchbar-content-spaces: 20px;
 
-.ambassadors-wrapper {
-  display: flex;
-  flex-direction: column;
-  height: calc(100% - 70px);
-  overflow: auto;
-}
-
 .ambassadors-searchbar {
   display: flex;
   flex-direction: column;

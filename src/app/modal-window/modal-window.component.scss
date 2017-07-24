@@ -1,0 +1,52 @@
+@import '../../_variables.scss';
+
+$modal-background-width: 100%;
+$modal-background-height: 100%;
+$modal-z-index: 65535;
+
+.modal-background {
+  position: fixed;
+  width: $modal-background-width;
+  height: $modal-background-height;
+  background-color: rgba(black, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: $modal-z-index;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: $border-card-radius;
+  z-index: $modal-z-index + 1;
+}
+
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.ambassador-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ambassador-info-input{
+  width: 50%;
+}
+
+.ambassador-social-input {
+  width: 45%;
+}
+
+.ambassador-social-input, .ambassador-info-input {
+  margin: 5px 0;
+}
+
+.social {
+  display: flex;
+  justify-content: space-around;
+}

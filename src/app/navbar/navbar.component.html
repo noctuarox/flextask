@@ -4,19 +4,20 @@
       <div class="navbar-logo">
         <img src="https://pmcdeadline2.files.wordpress.com/2016/07/logo-tv-logo.png" class="navbar-logo-img">
       </div>
-      <div class="navbar-item">Ambassadors</div>
-      <div class="navbar-item">Campaigns</div>
-      <div class="navbar-item">Payments</div>
-      <div class="navbar-item">Support</div>
-      <div class="navbar-item">Messages</div>
-      <div class="navbar-item"><span class="dropdown">More <i class="material-icons dropdown-icon">keyboard_arrow_down</i></span></div>
+      <div class="navbar-item" routerLink="/ambassadors" routerLinkActive="active">Ambassadors</div>
+      <div class="navbar-item" routerLink="/campaigns" routerLinkActive="active">Campaigns</div>
+      <div class="navbar-item" routerLink="/payments" routerLinkActive="active">Payments</div>
+      <div class="navbar-item" routerLink="/products" routerLinkActive="active">Products</div>
+      <!--<div class="navbar-item">Support</div>-->
+      <!--<div class="navbar-item">Messages</div>-->
+      <!--<div class="navbar-item"><span class="dropdown">More <i class="material-icons dropdown-icon">keyboard_arrow_down</i></span></div>-->
     </div>
     <div class="navbar-primary-right">
       <input title="search-input" type="text" class="navbar-search-input">
       <span class="navbar-divider"></span>
       <div class="navbar-profile">
-        <div class="notification-icon">
-          <i class="material-icons notification-icon-language">language</i><span class="app-circle">4</span>
+        <div class="notification-icon" (click)="clearMessages()">
+          <i class="material-icons notification-icon-language">language</i><span class="app-circle">{{messageCount}}</span>
         </div>
         <div class="profile-picture">
           <img src="https://codepo8.github.io/canvas-images-and-pixels/img/horse.png" class="profile-picture-img">

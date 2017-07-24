@@ -43,12 +43,12 @@ $navbar-input-width: 270px;
         border-bottom: 2px transparent solid;
         color: $light-text-color;
         font-size: $primary-font-size;
-      }
-
-      .navbar-item:hover {
-        border-bottom: 2px $primary-blue solid;
-        color: $bold-text-color;
         cursor: pointer;
+
+        &:hover, &.active {
+          border-bottom: 2px $primary-blue solid;
+          color: $bold-text-color;
+        }
       }
     }
 

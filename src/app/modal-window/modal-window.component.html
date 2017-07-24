@@ -1,0 +1,24 @@
+<div class="modal-background" *ngIf="!isModalShown">
+  <div class="modal-content">
+    <div class="ambassador-inputs">
+      <form [formGroup]="ambassadorForm" (ngSubmit)="ambassadorFormOnSubmit()">
+        <input type="text" formControlName="name" placeholder="name" class="ambassador-info-input">
+        <input type="date" formControlName="birthDate" placeholder="birth date" class="ambassador-info-input">
+        <input type="text" formControlName="location" placeholder="location" class="ambassador-info-input">
+        <div formGroupName="costPerPost">
+        <input type="number" formControlName="amount" placeholder="cost per post" class="ambassador-info-input">
+        <input type="text" formControlName="currency" placeholder="currency" class="ambassador-info-input">
+        </div>
+        <div class="social" formArrayName="social">
+          <div *ngFor="let index of socialControlIndices" [formGroupName]="index">
+            <input type="text" formControlName="network">
+            <input type="text" formControlName="url">
+          </div>
+        </div>
+        <button (click)="ambassadorFormAddSocial()" type="button">ADD SOCIAL</button>
+        <button type="submit">submit</button>
+      </form>
+    </div>
+  </div>
+  <div class="modal-overlay" (click)="modalClick()"></div>
+</div>

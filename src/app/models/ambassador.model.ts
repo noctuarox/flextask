@@ -1,6 +1,7 @@
 import { Moment } from 'moment';
 
 export interface AmbassadorModel {
+  id: string;
   name: string;
   birthDate: Moment;
   location: string;
@@ -13,6 +14,10 @@ interface Cost {
   currency: string;
 }
 
-interface SocialList {
+export interface SocialList {
   [network: string]: string;
 }
+
+export const ambassadors: AmbassadorModel[] = [
+
+];
